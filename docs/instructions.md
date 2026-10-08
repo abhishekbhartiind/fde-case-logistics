@@ -6,26 +6,39 @@
 - Install Docker on the EC2 instance. 
 - Docker Container > mcr.microsoft.com/mssql/server:2022-latest
 
-```
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=FdeEnterprise12345678!" -p 1433:1433 --name legacy-mssql -d mcr.microsoft.com/mssql/server:2022-latest
+```bash
+# windows
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=FdeDeveloper12345678!' -p 1433:1433 --name legacy-mssql -d mcr.microsoft.com/mssql/server:2022-latest
 
 # or multi-line in windows 
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=FdeEnterprise12345678!" ^
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=FdeDeveloper12345678!' ^
    -p 1433:1433 --name legacy-mssql ^
    -d mcr.microsoft.com/mssql/server:2022-latest
 
-# or multi-line unix
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=FdeEnterprise12345678!" \
-   -p 1433:1433 --name legacy-mssql \
-   -d mcr.microsoft.com/mssql/server:2022-latest
+# linux / Mac
+# Single
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=FdeDeveloper12345678!' -p 1433:1433 --name legacy-mssql -d mcr.microsoft.com/mssql/server:2022-latest
 
-# or multi-line with volume inside EC2
-docker run -v mssql_data:/var/opt/mssql \
-  -e "ACCEPT_EULA=Y" \
-  -e "MSSQL_SA_PASSWORD=FdeEnterprise12345678!" \
+# or multi-line unix
+docker run \
+  -e 'ACCEPT_EULA=Y' \
+  -e 'MSSQL_SA_PASSWORD=FdeDeveloper12345678!' \
   -p 1433:1433 \
   --name legacy-mssql \
-  -d mcr.microsoft.com/mssql/server:2022-latest
+  -d \
+  mcr.microsoft.com/mssql/server:2022-latest
+```
+
+```bash
+# Multi-line with volume inside AWS EC2
+docker run \
+  -v mssql_data:/var/opt/mssql \
+  -e 'ACCEPT_EULA=Y' \
+  -e 'MSSQL_SA_PASSWORD=FdeDeveloper12345678!' \
+  -p 1433:1433 \
+  --name legacy-mssql \
+  -d \
+  mcr.microsoft.com/mssql/server:2022-latest
 
 ```
 
