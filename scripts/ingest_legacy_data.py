@@ -7,8 +7,8 @@ from sqlalchemy import create_engine
 # pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
-# __file__ is 'experiment/phase-0/ingest_legacy_data.py'
-script_dir = Path(__file__).resolve().parent # points to experiment/phase-0
+# __file__ is 'chain-logistics/scripts/ingest_legacy_data.py'
+script_dir = Path(__file__).resolve().parent # points to chain-logistics/scripts
 project_root = script_dir.parents[0] # climbs up 1 levels to project root
 
 load_dotenv(project_root / ".env")
