@@ -90,11 +90,11 @@ deactivate
 ## Install SQL Server in your IDE (VS Code / Cursor / Antigravity)
 ```bash
 # Install extensions
-ProfileName:"legacy-mysql"
-Server:[IP_ADDRESS]
+ProfileName:"legacy-mssql"
+Server:[IP_ADDRESS] #localhost
 Database:master
 Username:sa
-Password:[PASSWORD]
+Password:[PASSWORD] #FdeDeveloper12345678!
 
 ```
 
