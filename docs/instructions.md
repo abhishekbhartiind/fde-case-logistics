@@ -43,7 +43,7 @@ docker run \
 ```
 
 
-- install the req > pip install -r requirements.txt
+- install the req > uv pip install -r requirements.txt
 
 - python scripts\ingest_legacy_data.py
 
@@ -58,3 +58,8 @@ docker rmi [image_name] # Image
 docker volume ls # Volume
 docker volume rm [volume_name] # Volume
 ```
+
+```bash
+
+```
+

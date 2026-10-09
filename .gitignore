@@ -1,2 +1,10 @@
 # Environment
 .env
+
+# Virtual environment
+.venv
+.venv/*
+!.venv/pyvenv.cfg
+
+# Temporary files
+__pycache__
