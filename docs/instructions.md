@@ -86,3 +86,16 @@ uv pip install -r requirements.txt
 # Deactivate
 deactivate
 ```
+
+## Install SQL Server in your IDE (VS Code / Cursor / Antigravity)
+```bash
+# Install extensions
+ProfileName:"legacy-mysql"
+Server:[IP_ADDRESS]
+Database:master
+Username:sa
+Password:[PASSWORD]
+
+```
+
+
