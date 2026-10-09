@@ -11,9 +11,9 @@ from dotenv import load_dotenv
 script_dir = Path(__file__).resolve().parent # points to chain-logistics/scripts
 project_root = script_dir.parents[0] # climbs up 1 levels to project root
 
-load_dotenv(project_root / ".env")
+load_dotenv(project_root / ".env") # locate .env file
 
-data_path = project_root / "data" / "raw" / "dynamic_supply_chain_logistics_dataset.csv"
+data_path = project_root / "data" / "raw" / "dynamic_supply_chain_logistics_dataset.csv" # locate csv file 
 
 db_host = os.getenv("SQL_SERVER_HOST", "localhost")
 db_port = os.getenv("SQL_SERVER_PORT", "1433")
