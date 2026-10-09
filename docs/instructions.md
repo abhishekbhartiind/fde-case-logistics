@@ -70,3 +70,19 @@ brew install openssl@3
 
 ```
 
+
+```bash
+# Python commands
+python3 -m venv .venv
+source .venv/bin/activate
+
+# uv commands
+uv add pandas pyodbc
+uv add -r requirements.txt
+
+# Install requirements
+uv pip install -r requirements.txt
+
+# Deactivate
+deactivate
+```
