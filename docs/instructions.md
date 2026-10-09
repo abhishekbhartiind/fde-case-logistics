@@ -60,6 +60,13 @@ docker volume rm [volume_name] # Volume
 ```
 
 ```bash
+brew update
+brew upgrade
+brew install unixodbc
+brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
+brew trust --formula microsoft/mssql-release/msodbcsql18
+brew install msodbcsql18
+brew install openssl@3
 
 ```
 

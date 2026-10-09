@@ -2,9 +2,7 @@ from pathlib import Path
 import pandas as pd
 import urllib
 import os
-# pyrefly: ignore [missing-import]
 from sqlalchemy import create_engine
-# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
 # __file__ is 'chain-logistics/scripts/ingest_legacy_data.py'
@@ -15,8 +13,9 @@ load_dotenv(project_root / ".env") # locate .env file
 
 data_path = project_root / "data" / "raw" / "dynamic_supply_chain_logistics_dataset.csv" # locate csv file 
 
-db_host = os.getenv("SQL_SERVER_HOST", "localhost")
-db_port = os.getenv("SQL_SERVER_PORT", "1433")
+# Reading from env file
+db_host = os.getenv("SQL_SERVER_HOST", "localhost") # Default to localhost
+db_port = os.getenv("SQL_SERVER_PORT", "1433") # Default to port 1433
 db_user = os.getenv("SQL_ADMIN_USER")
 db_password = os.getenv("SQL_ADMIN_PASSWORD")
 
