@@ -18,7 +18,8 @@ Give me the analytics and you can directly ask that I'm looking for so so so mat
 
 So here usually we have much lesser steps as compared to dashboard and the learning curve is you just need to know the language 
 
-# Solution Discussion
+
+## Legacy System
 
 1. Data Ingestion/Extraction:
     -legacy system => MS-SQL Server 2022 => Docker Container => AWS S3 Bucket 
@@ -32,6 +33,9 @@ So here usually we have much lesser steps as compared to dashboard and the learn
     
 4. Data Visualization:
     -AWS EC2 Instance => Linux Based OS (Ubuntu) => Docker Container => AWS S3 Bucket => 
+
+
+# Solution Discussion
 
 
 # Presentation

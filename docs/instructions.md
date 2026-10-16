@@ -100,7 +100,7 @@ Password:[PASSWORD] #FdeDeveloper12345678!
 
 # Instructions for data ingestion on EC2 Instance
 
-- Instance type: c7i-flex.large
+- Instance type: c7i-flex.large (free tier available)
 - Storage: Minimum 30 GB
 - Operating System: Ubuntu (linux)
 - Security group > attach the security while creating ec2 instance
