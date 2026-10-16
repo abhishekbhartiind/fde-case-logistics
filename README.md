@@ -37,6 +37,16 @@ So here usually we have much lesser steps as compared to dashboard and the learn
 
 # Solution Discussion
 
+**What do we mean by "Talk to our data" ?**
+- Legacy systems and SOPs are shared by clients.
+- Is our data structures 
+    => No (images, videos, pdf etc..)
+    => Yes (tables, rows, columns) => Relational DB (MSSQL)
+- Is our SOPs => Text stored in DB in document format.
+
+
+
+
 
 # Presentation
 # Coding/Implementation
