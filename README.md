@@ -20,7 +20,18 @@ So here usually we have much lesser steps as compared to dashboard and the learn
 
 # Solution Discussion
 
-
+1. Data Ingestion/Extraction:
+    -legacy system => MS-SQL Server 2022 => Docker Container => AWS S3 Bucket 
+    
+2. Data Storage/Processing:
+    -AWS S3 Bucket 
+    -AWS EC2 Instance (C7i-flex.large) => Linux Based OS (Ubuntu) => Docker Container
+    
+3. Data Analysis:
+    -AWS EC2 Instance (C7i-flex.large) => Linux Based OS (Ubuntu) => Docker Container
+    
+4. Data Visualization:
+    -AWS EC2 Instance => Linux Based OS (Ubuntu) => Docker Container => AWS S3 Bucket => 
 
 
 # Presentation
