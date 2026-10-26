@@ -38,42 +38,54 @@ So here usually we have much lesser steps as compared to dashboard and the learn
 # Solution Discussion
 
 **What do we mean by "Talk to our data" ?**
-- Legacy systems and SOPs are shared by clients.
+- Legacy systems and SOPs (Standard Operating Procedure) are shared by clients. (Given in data)
 - Is our data structures 
     => No (images, videos, pdf etc..)
-    => Yes (tables, rows, columns) => Relational DB (MSSQL)
+    => Yes (tables, rows, columns) => Relational DB (MSSQL) / tools / API for usual analytics (dashboard)
 - Is our SOPs => Text stored in DB in document format.
 - If yes, We have ask what works here ? RAG ? Api for visual analytics 
-    => if "Api for visual analytics" => it means we have to write api for sql queries (we can take help of LLM) and give response from API (we can plot it on dashboard) and also follow the same SOPs to get the data for dashboard. and also provide chat bot. 
-- If no, Follow RAG based approach
+    => if "Api for visual analytics" => it means we have to write api for sql queries (we can take help of LLM) and give response from API (we can plot it on dashboard) and also follow the same SOPs to get the data for dashboard. and also provide chat bot.  
+- If no, Follow RAG based approach (for unstructured data)
 
-Query Details
+## Query Details
 -------------
+```bash
+1. Based on location
+2. Based on coordinate
+3. Based on perishable items
+4. Based on seasonal heat spikes
+5. Based on weather conditions
+6. Based on combinations from above
+7. Based on SOPs
+```
 
-- based on location => based on country, based on city, based on zip code, based on state, based on latitude/longitude or coordinates 
-- based on coordinate => what is the distance between two coordinates ? what is the closest warehouse to this coordinate ? what is the furthest warehouse from this coordinate ? 
-- perishable => perishable items are more likely to spoil if not stored or transported under the right conditions. what is the list of perishable items ? what is the percentage of perishable items in my inventory ?
-- seasonal heat spikes => temperature / refrigration based question 
-- weather conditions => Is there any weather condition that can affect my supply chain ?  
-- combinations from above => what is the percentage of perishable items in my inventory that are currently in transit and are in a region that is experiencing heat spikes ?  
-- query from SOPs => SOPs (what is our return policy ? what is our replacement policy ? what is our warranty policy ?
+- based on location they can query => based on country, based on city, based on zip code, based on state, based on latitude/longitude or coordinates
+- based on coordinate they can query => what is the distance between two coordinates ? what is the closest warehouse to this coordinate ? what is the furthest warehouse from this coordinate ? Within the range of coordinate how many shipments are going which has high risk etc, they will able to query dashboard via coordinates.
+- based on perishable => perishable items are more likely to spoil if not stored or transported under the right conditions. what is the list of perishable items ? what is the percentage of perishable items in my inventory ?
+- based on seasonal heat spikes => temperature / refrigration based question -> Usually when we are doing shipment we sometimes get unseasonal heat spikes. Is refrigated shipment going on correctly or not ? (Check temperature inside refrigated container is 4 degree celsius)
+- based on weather conditions, whether if it is raining, snowing, hurricane etc => Is there any weather condition that can affect my supply chain ?  
+- based on combinations from above => what is the percentage of perishable items in my inventory that are currently in transit and are in a region that is experiencing heat spikes ?  
+- based on SOPs => SOPs (what is our return policy ? what is our replacement policy ? what is our warranty policy ? Query based on SOPs. Fresher / Intern joined the company, ask queries for SOPs to understand SOPs. "I want to know how to raise a ticket for damaged goods" etc..)
 
-Security
-- Agent doesn't not insert / delete the data, only select/fetch the data from DB.
+## Security
+- Agent doesn't not *insert / delete* the data, only select/fetch the data from DB. Agent should not modify, insert or delete data from DB.
+- Agent should not able to access user credentials in anyhow. They should not be able to see or fetch user credentials. Like user.id / user.password etc.. or interacted with unknown tables if not asked. (i.e. system tables, other tables etc..)
 
-what does it takes to build security in mind ?
+### What does it takes to build system with *security* in mind ?
 
 ```bash
 
-Agent => Unnessary command => Actions
+Agent => Unnessary command => Actions will be performed
               |
               V
-            Find ? => Database => Create users      user.id / user.password [user, password]
+            Find ? => Database => Create multiple users      user.id / user.password [user, password]
                                    | 
                                    V
-                                Restrict Access
+                                Restrict Access => Only CRUD(Select) operations on required tables
 
 ```
+We are going to use same credentials (new access without insert/delete), we are blocking the access from core from software
+
 
 Data Sources
 - Relational DB
