@@ -43,9 +43,41 @@ So here usually we have much lesser steps as compared to dashboard and the learn
     => No (images, videos, pdf etc..)
     => Yes (tables, rows, columns) => Relational DB (MSSQL)
 - Is our SOPs => Text stored in DB in document format.
+- If yes, We have ask what works here ? RAG ? Api for visual analytics 
+    => if "Api for visual analytics" => it means we have to write api for sql queries (we can take help of LLM) and give response from API (we can plot it on dashboard) and also follow the same SOPs to get the data for dashboard. and also provide chat bot. 
+- If no, Follow RAG based approach
 
+Query Details
+-------------
 
+- based on location => based on country, based on city, based on zip code, based on state, based on latitude/longitude or coordinates 
+- based on coordinate => what is the distance between two coordinates ? what is the closest warehouse to this coordinate ? what is the furthest warehouse from this coordinate ? 
+- perishable => perishable items are more likely to spoil if not stored or transported under the right conditions. what is the list of perishable items ? what is the percentage of perishable items in my inventory ?
+- seasonal heat spikes => temperature / refrigration based question 
+- weather conditions => Is there any weather condition that can affect my supply chain ?  
+- combinations from above => what is the percentage of perishable items in my inventory that are currently in transit and are in a region that is experiencing heat spikes ?  
+- query from SOPs => SOPs (what is our return policy ? what is our replacement policy ? what is our warranty policy ?
 
+Security
+- Agent doesn't not insert / delete the data, only select/fetch the data from DB.
+
+what does it takes to build security in mind ?
+
+```bash
+
+Agent => Unnessary command => Actions
+              |
+              V
+            Find ? => Database => Create users      user.id / user.password [user, password]
+                                   | 
+                                   V
+                                Restrict Access
+
+```
+
+Data Sources
+- Relational DB
+- Knowledge from SOPs
 
 
 # Presentation
