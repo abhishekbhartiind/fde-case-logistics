@@ -92,5 +92,35 @@ Data Sources
 - Knowledge from SOPs
 
 
+Relational DB
+- Can see grow ? YES (data will forsure grow)
+
+To exract the data we can use
+- API (For dashboard)
+- MCP (Model Context Protocol) (For agentic solution) => We can extract data from MCP and through MCP we can create custom tools which agent can use to extract data from DB.
+
+if we want to expose an MCP to an AI Agents, so it can use this tools and give us the answers and that anwers we can passed it to agents and agent will be interacting with MCP.
+
+We can create a tools ? How many tools ? => We need to ask from clients and based on that we can create tools, so they can use this tools and 
+
+- Instead of MCP, we can use **test2SQL** or **MISTRAL SQL MODEL** to create tools which can be used to extract data from DB.
+
+**test2SQL** => can generate SQL queries for given prompt (But it is not much efficient for this case as it will generate queries which can be very costly)
+
+If AI Agent is asking i want to get these data, then our AI Agent writes SQL script and we are going to use the dynamic SQL that SQL that AI has created and run the SQL => get the data => pass it to LLM => LLM process it => give final answer to user. (and we will ask from user that does this query is correct or not ?)
+
+**MISTRAL SQL MODEL** => can generate SQL queries for given prompt (And it is much more efficient for this case as it will generate queries which can be very optimized)
+
+If AI Agent is asking i want to get these data, then our AI Agent writes SQL script => pass it to **MISTRAL SQL MODEL** => it generate query => execute on DB => get data => pass it to LLM => LLM process it => give final answer to user. (and we will ask from user that does this query is correct or not ?)
+
+**Note** -
+- We can also use LangChain SQL Agent.
+- We can also create a MCP for this if we want to provide more better and optimized experience. (Depends on client) 
+
+**Custom tools** => How many tools ? 
+- We have to ask from clients and based on that we can create tools, so they can use this tools and 
+
+
+
 # Presentation
 # Coding/Implementation
