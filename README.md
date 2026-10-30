@@ -109,6 +109,13 @@ We can create a tools ? How many tools ? => We need to ask from clients and base
 
 If AI Agent is asking i want to get these data, then our AI Agent writes SQL script and we are going to use the dynamic SQL that SQL that AI has created and run the SQL => get the data => pass it to LLM => LLM process it => give final answer to user. (and we will ask from user that does this query is correct or not ?)
 
+Cons: If query is not correct, we will not get result -> solved if we create agent that interact and see previous response and fix the query.
+
+Pros: 
+- It is not limited
+- Multi terns
+- Faster Prototype
+
 **MISTRAL SQL MODEL** => can generate SQL queries for given prompt (And it is much more efficient for this case as it will generate queries which can be very optimized)
 
 If AI Agent is asking i want to get these data, then our AI Agent writes SQL script => pass it to **MISTRAL SQL MODEL** => it generate query => execute on DB => get data => pass it to LLM => LLM process it => give final answer to user. (and we will ask from user that does this query is correct or not ?)
@@ -119,6 +126,16 @@ If AI Agent is asking i want to get these data, then our AI Agent writes SQL scr
 
 **Custom tools** => How many tools ? 
 - We have to ask from clients and based on that we can create tools, so they can use this tools and 
+
+### Questions from SOPs
+
+User => Agent => Sementic Search => RAG
+
+- It should be RAG based solution, as users can ask any queries => that can have different meanings, 
+- We can't just have Fuzzy Search, Text Matching, We have to introduce "Symentic Search"
+- 
+
+
 
 
 
