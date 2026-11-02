@@ -129,13 +129,20 @@ If AI Agent is asking i want to get these data, then our AI Agent writes SQL scr
 
 ### Questions from SOPs
 
-User => Agent => Sementic Search => RAG
+User => Agent => Sementic Search => RAG => Response
+
+knowledge from SOP => RAG => 
+    - Chuking => Validation -> Source Informaion
+    - Modification / Deletion of SOPs
+    - Ingestion logics -> Data types (.md, .pdf, .xlsx, .docx)
 
 - It should be RAG based solution, as users can ask any queries => that can have different meanings, 
-- We can't just have Fuzzy Search, Text Matching, We have to introduce "Symentic Search"
-- 
-
-
+- We can't just have Fuzzy Search, Text Matching, We have to introduce "Symentic Search" And the best way to do semantic search is by adding that RAG system. So the agent can now use this rag as tool. 
+- User can use particular tool pass the user query in this tool and can get the response. So if you can create the system then it can give user the context from the rag. agent then can use this context to give you the final response.
+- Consider few more things like whether these SOPs are going to be updated. If updated is there going to be any modification. So modification/deletion strategy.
+- Response should contains the source information for validation
+- we can say that the agent is not hallucinating and make and like making up all this details. Whatever user is asking only if it is found then only if it is found then give me the response. If there is no source present we can write in the prompt. 
+- injection logic for different data types or source type. Think of it as like for MD file, for PDF, for XLSX, for txt. Right now we cannot support everything. But MD file should have different injection logic because MD file has different headers etc
 
 
 
