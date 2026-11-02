@@ -144,7 +144,18 @@ knowledge from SOP => RAG =>
 - we can say that the agent is not hallucinating and make and like making up all this details. Whatever user is asking only if it is found then only if it is found then give me the response. If there is no source present we can write in the prompt. 
 - injection logic for different data types or source type. Think of it as like for MD file, for PDF, for XLSX, for txt. Right now we cannot support everything. But MD file should have different injection logic because MD file has different headers etc
 
+### Data Storage
+
+we don't have to provide **guardrails** the security we are providing so agent cannot do insert or delete on on on the data 
+
+MCP we can use text to SQL and we are following with the text to SQL for the relational 
+database part for the structured data part.
+
+it's time to create a HLD and LLD for review for documentation. I have already prepared that based on all of this.
 
 
 # Presentation
+
+Pitch Deck
+
 # Coding/Implementation
